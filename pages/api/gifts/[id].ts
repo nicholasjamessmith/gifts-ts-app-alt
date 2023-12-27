@@ -21,5 +21,16 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       const { Gift } = await connect() //Connects to database
       res.json(await Gift.findByIdAndUpdate(id, req.body, { new: true }).catch(catcher))
     },
+    //Response for delete requests
+    DELETE: async (req: NextApiRequest, res: NextApiResponse) => {
+      const { Gift } = await connect() // Connect to database
+      res.json(await Gift.findByIdAndDelete(id).catch(catcher))
+    },
   }
+  //Check if there is a response for the particular method, if so invoke it, if not response with an error
+  const response = handleCase[method]
+  if (response) response(req, res)
+  else res.status(400).json({ error: "No Response for This Request" })
 }
+export default handler
+
