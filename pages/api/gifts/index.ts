@@ -26,5 +26,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   else res.status(400).json({ error: "No Response for This Request" })
 }
 
+//Exports thee aabove block/sections of code which handle GET and POST requests
 export default handler
 //GET and POST routes working on Postman
