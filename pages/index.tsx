@@ -24,6 +24,7 @@ function Index(props: IndexProps) {
           </Link>
         </div>
       ))}
+      <Link href="/gifts/create"><button>Add a Gift</button></Link>
     </div>
   )
 }
