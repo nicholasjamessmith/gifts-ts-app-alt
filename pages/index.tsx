@@ -31,7 +31,7 @@ function Index(props: IndexProps) {
 
 //Get props for server side rendering
 export async function getServerSideProps() {
-  //Get figt data from API
+  //Get gift data from API
   const res = await fetch(process.env.API_URL as string)
   const gifts = await res.json()
   
