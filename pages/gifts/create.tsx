@@ -48,12 +48,14 @@ function Create(props: CreateProps) {
 }
 
 //export getStaticProps to provide API_URL to component
-export async function getStaticProps() {
+export async function getStaticProps(context: any) {
   return {
     props: {
       url: process.env.API_URL,
     },
+    //url: process.env.API_URL,
   }
 }
 //export component
 export default Create
+//Testing deployment
