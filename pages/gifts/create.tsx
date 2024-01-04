@@ -49,9 +49,10 @@ function Create(props: CreateProps) {
 
 //export getStaticProps to provide API_URL to component
 export async function getStaticProps(context: any) {
+  const apiLink = String(process.env.API_URL);
   return {
     props: {
-      url: process.env.API_URL,
+      apiLink,
     },
     //url: process.env.API_URL,
   }
